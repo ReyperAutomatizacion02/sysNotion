@@ -1,0 +1,161 @@
+[
+    {
+        "titulo": "DB - Utilidad total de las piezas",
+        "id": "1d082422-9b5c-8015-ada9-ec6d479b44b3",
+        "relaciones": [
+            {
+                "nombre_propiedad": "Sub-item",
+                "relacion_a_db_id": "1d082422-9b5c-8015-ada9-ec6d479b44b3"
+            },
+            {
+                "nombre_propiedad": "Bloqueado por",
+                "relacion_a_db_id": "1d082422-9b5c-8015-ada9-ec6d479b44b3"
+            },
+            {
+                "nombre_propiedad": "Parent item",
+                "relacion_a_db_id": "1d082422-9b5c-8015-ada9-ec6d479b44b3"
+            },
+            {
+                "nombre_propiedad": "Base de datos sin título",
+                "relacion_a_db_id": "1dd82422-9b5c-80d4-b0a6-c98bbab5dc36"
+            },
+            {
+                "nombre_propiedad": "Bloqueando",
+                "relacion_a_db_id": "1d082422-9b5c-8015-ada9-ec6d479b44b3"
+            }
+        ]
+    },
+    {
+        "titulo": "DB - OKR’s",
+        "id": "58caafe2-d12b-4a0e-8b83-7077b03b1307",
+        "relaciones": []
+    },
+    {
+        "titulo": "Log - BD Utilidad total de las piezas",
+        "id": "1dd82422-9b5c-80d4-b0a6-c98bbab5dc36",
+        "relaciones": [
+            {
+                "nombre_propiedad": "DB - Utilidad total de las piezas",
+                "relacion_a_db_id": "1d082422-9b5c-8015-ada9-ec6d479b44b3"
+            }
+        ]
+    },
+    {
+        "titulo": "PG’s - Centro de control AUTM",
+        "id": "1d782422-9b5c-80e8-bb5f-fd25db25d9a6",
+        "relaciones": []
+    },
+    {
+        "titulo": "PY’s - Centro de control AUTM",
+        "id": "1d782422-9b5c-80b2-ad11-e8f0e4847ad2",
+        "relaciones": []
+    },
+    {
+        "titulo": "PG’s - Centro de control EXT en uso",
+        "id": "1dc82422-9b5c-8002-bd88-daaa05317326",
+        "relaciones": []
+    },
+    {
+        "titulo": "Accion_Directa_Actividades",
+        "id": "1d182422-9b5c-805d-8021-ec51f95aa9dc",
+        "relaciones": []
+    },
+    {
+        "titulo": "Tabla_Final_Emojis_Unificados",
+        "id": "1d182422-9b5c-80e6-8bb4-c895b82e4f8c",
+        "relaciones": []
+    },
+    {
+        "titulo": "Verbos",
+        "id": "1d182422-9b5c-809c-b6f1-ef962e7624b1",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB’s - Centro de control EXT sin uso",
+        "id": "1d782422-9b5c-80ab-b608-d4fc8da67760",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB’s - Centro de control AUTM",
+        "id": "1d782422-9b5c-8062-bb9f-d927fe3ee3d3",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB’s - Centro de control EXT en uso",
+        "id": "1d782422-9b5c-80fa-8adf-ed79b3dda39a",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB - Solicitudes de material",
+        "id": "19982422-9b5c-805a-8e17-c29015e468c4",
+        "relaciones": [
+            {
+                "nombre_propiedad": "Material",
+                "relacion_a_db_id": "1e4d356e-8744-437e-ab59-b98b8072df68"
+            },
+            {
+                "nombre_propiedad": "Proyectos automatización",
+                "relacion_a_db_id": "19982422-9b5c-80c9-b5f8-f72d60693ee3"
+            }
+        ]
+    },
+    {
+        "titulo": "DB - Ordenes de material ",
+        "id": "19982422-9b5c-80be-b307-f4b64b450d52",
+        "relaciones": [
+            {
+                "nombre_propiedad": "🔌 DB - Inventario de Componentes",
+                "relacion_a_db_id": "1e4d356e-8744-437e-ab59-b98b8072df68"
+            }
+        ]
+    },
+    {
+        "titulo": "DB - Proyectos automatización",
+        "id": "19982422-9b5c-80c9-b5f8-f72d60693ee3",
+        "relaciones": [
+            {
+                "nombre_propiedad": "Solicitudes de material",
+                "relacion_a_db_id": "19982422-9b5c-805a-8e17-c29015e468c4"
+            }
+        ]
+    },
+    {
+        "titulo": "DB - Inventario de Componentes",
+        "id": "1e4d356e-8744-437e-ab59-b98b8072df68",
+        "relaciones": [
+            {
+                "nombre_propiedad": "Ordenes de material ",
+                "relacion_a_db_id": "19982422-9b5c-80be-b307-f4b64b450d52"
+            },
+            {
+                "nombre_propiedad": "Solicitudes de material",
+                "relacion_a_db_id": "19982422-9b5c-805a-8e17-c29015e468c4"
+            }
+        ]
+    },
+    {
+        "titulo": "DB - Planificador semanal de actividades",
+        "id": "19882422-9b5c-80a7-bf13-db5ee4cfe4af",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB - Cronograma Detallado * Proyectos",
+        "id": "1c282422-9b5c-806a-96bb-f94d4e420a0b",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB - Evaluaciones / Practicantes",
+        "id": "135a85a9-c5d6-4554-a31b-edcc9d61c95c",
+        "relaciones": []
+    },
+    {
+        "titulo": "DB - Calificaciones de champions",
+        "id": "e5e0269a-0055-4534-abf3-51697a6b3e78",
+        "relaciones": []
+    },
+    {
+        "titulo": "📜 Bitácora de mantenimiento",
+        "id": "1d182422-9b5c-80dd-a8f5-f11e54f80cdb",
+        "relaciones": []
+    }
+]

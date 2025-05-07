@@ -1,0 +1,86 @@
+/* src/Graph.css */
+
+/* Estilo para el contenedor principal del gráfico de ReactFlow */
+/* Aplicado al div con className="react-flow-container" en App.jsx */
+.react-flow-container {
+    /* Por defecto, solo necesita el 100% width/height (ya definido inline o en index.css). */
+    /* Puedes añadir bordes, un fondo diferente, padding, etc. aquí si no lo haces en index.css. */
+    background-color: #f2f2f2;
+    /* border: 1px solid #ddd; */
+  }
+  
+  /* --- Estilos para Efectos de Resaltado (Hover/Selección) --- */
+  /* Estas reglas se aplican a los nodos y aristas cuando tienen la clase 'is-highlighted' */
+  /* Esta clase 'is-highlighted' se añade/elimina dinámicamente en el componente App.jsx (useMemo) */
+  
+  /* Estilo para Nodos resaltados */
+  /* Usamos un selector más específico combinando la clase generada por RF (.react-flow__node-entity) */
+  /* con nuestra clase de resaltado (.is-highlighted). Esto asegura que el estilo se aplica al contenedor principal del nodo. */
+  .react-flow__node-entity.is-highlighted {
+      /* Ejemplo de estilo: Añadir una sombra clara y vibrante */
+      box-shadow: 0 0 12px 1.5px rgba(60, 180, 110, 0.7); /* Sombra verde/turquesa */
+      /* Puedes añadir una transición suave al box-shadow en .entity-node-container si quieres */
+      /* background-color: #e9f5ee; */ /* Un fondo ligeramente más claro al resaltar */
+      z-index: 5; /* Asegurar que los nodos resaltados estén visualmente "por encima" */
+      /* Si estás usando un borde de color base, puedes cambiar el borde al resaltar también */
+      /* border-color: #3cb470 !important; */ /* Usar !important si el estilo inline lo sobrescribe */
+      /* Opcional: Efecto de escala sutil */
+      /* transform: scale(1.02); */ /* Requiere transition en el estilo base */
+  }
+  
+  /* Estilo para Aristas resaltadas */
+  /* ReactFlow usa un elemento <path> dentro de <g> con la clase 'react-flow__edge' para dibujar la línea. */
+  /* Aplicamos nuestra clase 'is-highlighted' al elemento arista de ReactFlow, y luego apuntamos al 'path' dentro de él. */
+  .react-flow__edge.is-highlighted path {
+      stroke: #3cb470 !important; /* Cambiar el color de la línea al verde/turquesa de resaltado. Usamos !important para sobreescribir el estilo inline. */
+      stroke-width: 3 !important;
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.2));
+      /* Opcional: Añadir un efecto animado (rayas moviéndose, si stroke-dasharray es compatible con el tipo de arista) */
+      /* animation: dashdraw 0.5s linear infinite; */
+      /* stroke-dasharray: 5; */
+  }
+  
+  /* Si tienes múltiples aristas paralelas y las quieres resaltar */
+  /* La clase .is-highlighted se aplicará a cada una individualmente, así que los estilos anteriores ya funcionan. */
+  /* No necesitas reglas especiales para paralelismo aquí a menos que quieras un efecto de resaltado distinto solo para paralelas. */
+  
+  
+  /* --- Estilo para las etiquetas de las aristas (los nombres de las propiedades de relación) --- */
+  /* Esta clase 'react-flow__edge-label' se aplica al div que contiene el texto del label en nuestro componente ParallelSmoothstepEdge.jsx. */
+  .react-flow__edge-label {
+     font-size: 0.8em; /* Ajustado de 0.7em a 0.8em */
+     background: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente para mejorar la legibilidad del texto sobre la línea. */
+     padding: 1px 5px; /* Espaciado interno alrededor del texto del label. */
+     border-radius: 4px; /* Esquinas ligeramente redondeadas para el fondo del label. */
+     border: 1px solid #cccccc; /* Borde sutil alrededor del fondo del label. */
+     color: #333; /* Color de texto oscuro para el label. */
+     /* Propiedades flexbox para centrar el texto dentro del div si es más grande */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     white-space: nowrap; /* Evita que el texto del label se rompa en varias líneas */
+     margin: 2px 0; /* Añadir margen vertical para evitar solapamientos */
+     /* Opcional: transiciones */
+     /* transition: all 0.2s ease; */
+  }
+  
+  /* Estilo de label cuando la arista (o sus nodos) están resaltados */
+  /* Apunta a la clase de label DENTRO de una arista resaltada. */
+  .react-flow__edge.is-highlighted .react-flow__edge-label {
+     border-color: #3cb470; /* Cambia el color del borde del fondo del label */
+     /* box-shadow: 0 0 6px rgba(60, 180, 110, 0.5); */ /* Sombra suave en el label */
+     /* font-weight: bold; */ /* Hacer el texto más negrita */
+  }
+  
+  /* Opcional: Animación de la línea para el resaltado si descomentaste las propiedades dasharray/animation arriba */
+  /* @keyframes dashdraw { */
+  /*   from { stroke-dashoffset: 1000; } */
+  /*   to { stroke-dashoffset: 0; } */
+  /* } */
+  
+  
+  /* Puedes añadir estilos adicionales para otros elementos de ReactFlow aquí si necesitas: */
+  /* Ej: Estilizar los Handles */
+  /* .react-flow__handle { border-color: blue; } */
+  /* Ej: Estilizar el MiniMap */
+  /* .react-flow__minimap { border: 1px solid #ccc; } */

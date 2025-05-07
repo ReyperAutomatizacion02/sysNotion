@@ -1,0 +1,107 @@
+/* src/Node.css */
+
+/* Estilo para el contenedor principal del nodo (CollapsibleEntityNode) */
+.entity-node-container {
+    /* Apariencia general */
+    border-radius: 12px;       /* Esquinas redondeadas (similar a rounded-2xl) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave (similar a shadow) */
+    padding: 12px 18px;      /* Espaciado interno (ajusta si quieres más) */
+    background-image: linear-gradient(to bottom, #f9f9f9, #ffffff); /* Gradiente sutil */
+    min-width: 250px;        /* Ancho mínimo ajustado de 230px a 250px */
+    font-family: 'Arial', sans-serif; /* Fuente más moderna */
+    font-size: 0.8em;       /* Tamaño de fuente pequeño (similar a text-xs) */
+    border: 1px solid;       /* Borde (el color lo daremos inline) */
+    position: relative;      /* Necesario para los Handles absolutos de ReactFlow */
+    transition: box-shadow 0.2s ease; /* Transición para efectos de hover/selección */
+    cursor: grab;            /* Cursor de arrastre por defecto */
+  }
+  
+  /* Cursor al arrastrar */
+  .entity-node-container:active {
+     cursor: grabbing;
+  }
+  
+  
+  /* Estilo para la cabecera del nodo (Título + Botón Colapsar) */
+  .entity-node-header {
+      display: flex;           /* Usar flexbox para alinear elementos */
+      justify-content: space-between; /* Espacio entre título y botón */
+      align-items: center;     /* Alinear verticalmente */
+      font-weight: 600;        /* Semibold (similar a font-semibold) */
+      cursor: pointer;         /* Cursor de puntero en la cabecera */
+      margin-bottom: 5px;      /* Espacio debajo de la cabecera */
+      /* truncate no es una propiedad CSS directa, requiere manejo con overflow */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  
+   .entity-node-header span:first-child {
+      flex-grow: 1; /* Hace que el título ocupe el espacio disponible */
+      overflow: hidden; /* Asegura que el truncate funcione */
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-right: 10px; /* Espacio entre título y botón */
+   }
+  
+  
+  /* Estilo para las secciones de propiedades (PK, TIMESTAMPS, ATRIBUTOS) */
+  .entity-node-section {
+      margin-top: 10px; /* Espacio encima de cada sección ajustado de 8px a 10px */
+      padding-top: 8px; /* Pequeño padding superior ajustado de 5px a 8px */
+      border-top: 1px dashed #eee; /* Línea divisoria punteada suave */
+  }
+  
+   /* La primera sección no necesita borde superior ni margen */
+  .entity-node-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+  }
+  
+  
+  /* Estilo para los títulos de sección (PK, TIMESTAMPS, ATRIBUTOS) */
+  .entity-node-section .section-title {
+     font-weight: bold;        /* Negrita */
+     font-size: 0.9em;         /* Tamaño de fuente ligeramente menor que el texto */
+     letter-spacing: 0.05em;   /* Espaciado entre letras (similar a tracking-widest) */
+     margin-bottom: 3px;       /* Espacio debajo del título de sección */
+     color: #555;              /* Color de texto sutil */
+     text-transform: uppercase;/* Texto en mayúsculas */
+  }
+  
+  /* Estilo para la sección de TIMESTAMPS (gris) */
+  .entity-node-section.timestamps {
+     color: #666666; /* Color gris (similar a text-gray-600) */
+     font-size: 0.9em; /* Tamaño de fuente para timestamps */
+  }
+  
+  
+  /* Estilo para las listas dentro de las secciones */
+  .entity-node-section ul {
+     list-style: none; /* Quitar los puntos de la lista */
+     padding: 0;      /* Quitar el padding por defecto de la lista */
+     margin: 0;       /* Quitar el margen por defecto */
+  }
+  
+  /* Estilo para los items de la lista (cada nombre de propiedad/campo) */
+  .entity-node-section li {
+     margin-bottom: 2px; /* Espacio entre items */
+      /* truncate manual si se necesita, aunque los nombres cortos de propiedades no suelen requerirlo en este ancho */
+  }
+  
+  /* --- Estilos para Efectos de Hover y Selección (Opcional con clases) --- */
+  /* NOTA: La lógica para aplicar estas clases está en App.jsx (nodesWithHighlight map) */
+  
+  .react-flow__node-entity.is-selected .entity-node-container {
+      box-shadow: 0 0 15px 2px rgba(0, 123, 255, 0.5); /* Sombra azul al seleccionar */
+       /* Puedes ajustar bordes, fondo, etc. al seleccionar */
+  }
+  
+   /* Si usas clases para el resaltado al pasar el ratón (ver App.jsx nodesWithHighlight map) */
+  .entity-node-container.is-highlighted {
+      box-shadow: 0 0 12px 1px rgba(40, 167, 69, 0.6); /* Sombra verde al pasar el ratón */
+       /* Otras propiedades: */
+       /* transform: scale(1.02); */
+       /* border-color: #28a745 !important; */
+  }
